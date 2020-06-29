@@ -5,9 +5,22 @@ var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var number = "1234567890";
 var special = "!@#$%^&*()";
-var final = " "
+var final = "";
+
+// Write password to the #password input
+
+
+
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", selectInput);
+
+
 
 function selectInput() {
+  
+ 
 var charSelect = Number(prompt("Select number of charcters (between 8 and 128)"));
 
 
@@ -32,24 +45,38 @@ if  (specSelect === true)
 console.log(final);
 
 
+ 
+  function generatePassword(charSelect) {
+
+for ( i = 0; i < charSelect; i++) {password += charAt(final)[Math.floor(Math.random() * final.length)]; console.log(password)};
 }
 
 
-
-
-
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+   passwordText.value = password;
+}
+generatePassword()
 
-  passwordText.value = password;
-
+writePassword()
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", selectInput);
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
 
         
 
