@@ -6,7 +6,7 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var number = "1234567890";
 var special = "!@#$%^&*()";
 var final = "";
-
+var pWord = ""
 // Write password to the #password input
 
 
@@ -18,10 +18,12 @@ generateBtn.addEventListener("click", selectInput);
 
 
 
-function selectInput() {
+function selectInput(Characters) {
   
- 
-var charSelect = Number(prompt("Select number of charcters (between 8 and 128)"));
+var charNum = Number(prompt("Select number of charcters (between 8 and 128)"));
+
+
+
 
 
 var upSelect = confirm("Does the password require uppercase letters?");
@@ -46,16 +48,17 @@ console.log(final);
 
 
  
-  function generatePassword(charSelect) {
-
-for ( i = 0; i < charSelect; i++) {password += charAt(final)[Math.floor(Math.random() * final.length)]; console.log(password)};
+  function generatePassword() {
+var i  
+for ( i = 0; i < charNum; i++) {pWord += (final)[Math.floor(Math.random() * final.length)];};
 }
 
 
 function writePassword() {
-  var password = generatePassword();
+  var password = pWord;
   var passwordText = document.querySelector("#password");
    passwordText.value = password;
+   console.log(pWord);
 }
 generatePassword()
 
