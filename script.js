@@ -51,7 +51,7 @@ if  (specSelect === true)
 console.log(finArr);
  
   function generatePassword() {
-var i  
+
 for ( i = 0; i < charNum; i++) {pWord += (final)[Math.floor(Math.random() * final.length)];}; 
 }
 
@@ -59,21 +59,35 @@ for ( i = 0; i < charNum; i++) {pWord += (final)[Math.floor(Math.random() * fina
 
 
 
-  
-function findCommonElement() { 
+function checkPass() {
 
-  var array1 = pWord.split("");
+var ind = 0
 
-  var array2 = array2(array2); 
+var indexNo = finArr[ind];
 
-  function array2()
-  {return finArr[1].split("")};
+var arrInd = finArr.length;
 
-  var arrayLength = arrayLength(array2);
-  function arrayLength(array2) {return array2.length};
+var array1 = pWord.split("");
 
-      console.log(pWord);
-    
+var array2 = array2(array2); 
+
+function array2()
+    {
+    return indexNo.split("")
+    };
+
+var arrayLength = arrayLength(array2);
+function arrayLength(array2) 
+  {
+    return array2.length;
+  }
+
+  // Loops through each selected character set //
+for (var h = 0; h < arrInd; h++) {
+
+
+  // Loops through each item in index//
+
     for(let i = 0; i < charNum; i++) { 
           
         
@@ -82,14 +96,30 @@ function findCommonElement() {
            
             if(array1[i] === array2[j]) { 
               
-                 
-                console.log(true); 
-            } 
-        } 
-    } 
-      
-     console.log(false);  
-} 
+                 return true;} 
+                 else {return false;}
+                } 
+        }  
+        
+        
+  } 
+
+}
+
+function gate () {
+
+  if (checkPass == true) {
+    writePassword();
+  }
+  else {
+        ; 
+        generatePassword; 
+        checkPass(); 
+        gate();
+      }
+  
+  
+}
 
 
 
@@ -104,9 +134,11 @@ function writePassword() {
 
 generatePassword()
 
-findCommonElement();
-
+checkPass();
+gate();
 writePassword();
+
+
 
 
 
