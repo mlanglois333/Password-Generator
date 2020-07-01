@@ -7,7 +7,7 @@ var number = "1234567890";
 var special = "!@#$%^&*()";
 var final = "";
 var finArr = [];
-
+var tf = [];
 var pWord = "";
 // Write password to the #password input
 
@@ -61,29 +61,29 @@ for ( i = 0; i < charNum; i++) {pWord += (final)[Math.floor(Math.random() * fina
 
 function checkPass() {
 
+  //defines index number of string to be checked
 var ind = 0
-
+//defines index to be checked//
 var indexNo = finArr[ind];
-
+//defines length of array (charset)//
 var arrInd = finArr.length;
-
+//turns password into array of characters//
 var array1 = pWord.split("");
-
-var array2 = array2(array2); 
-
-function array2()
-    {
-    return indexNo.split("")
-    };
-
-var arrayLength = arrayLength(array2);
-function arrayLength(array2) 
-  {
-    return array2.length;
-  }
+//splits charset into array//
+var array2 = indexNo.split("");
+//defintes length of charset//
+var arrayLength = array2.length;
 
   // Loops through each selected character set //
-for (var h = 0; h < arrInd; h++) {
+for (var h = 0; h < arrInd ; h++) {
+
+  console.log(ind);
+  console.log(indexNo);
+  console.log(array1);
+  console.log(array2);
+  console.log(arrayLength);
+  console.log(arrInd);
+ 
 
 
   // Loops through each item in index//
@@ -91,13 +91,13 @@ for (var h = 0; h < arrInd; h++) {
     for(let i = 0; i < charNum; i++) { 
           
         
-        for(let j = 0; j < (arrayLength); j++) { 
+        for(let j = 0; j < arrayLength; j++) { 
               
            
             if(array1[i] === array2[j]) { 
-              
-                 return true;} 
-                 else {return false;}
+              tf = true}
+
+                 
                 } 
         }  
         
@@ -106,20 +106,10 @@ for (var h = 0; h < arrInd; h++) {
 
 }
 
-function gate () {
 
-  if (checkPass == true) {
-    writePassword();
-  }
-  else {
-        ; 
-        generatePassword; 
-        checkPass(); 
-        gate();
-      }
   
   
-}
+
 
 
 
@@ -135,9 +125,8 @@ function writePassword() {
 generatePassword()
 
 checkPass();
-gate();
 writePassword();
-
+ console.log (tf)
 
 
 
