@@ -161,3 +161,35 @@ if contains
     
 
     }
+function checkArr
+
+
+    set var for array length
+
+    if var array length =2
+
+
+
+
+
+     else if array length =3 etc..
+
+     else alert invalid selection
+
+
+
+
+     function gate () {
+  var tf = Boolean(checkPass());
+  if (tf = true) {
+    writePassword();
+  }
+  else {
+         
+        generatePassword; 
+        checkPass(); 
+        gate();
+      }
+  
+  
+}
