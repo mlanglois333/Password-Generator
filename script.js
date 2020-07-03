@@ -4,16 +4,18 @@ var generateBtn = document.querySelector("#generate");
 var finArr = [];
 var pWord = "";
 
-
-generateBtn.addEventListener("click", selectInput);
-
+generateBtn.addEventListener("click", Start);
 
 
-function selectInput() {
+
+function Start() {
   
-var charNum = Number(prompt("Select number of charcters (between 8 and 128)"));
-if (charNum < 8, charNum > 128) {alert("Must be between 8-128 characters")};
+var charNum = (prompt("Select number of charcters (between 8 and 128)"))
+ if (charNum < 8) {alert("Must contain 8-128 characters"); }
+ else if (charNum > 128) {alert("Must contain 8-128 characters");
 
+}
+else {
 
 var upSelect = confirm("Does the password require uppercase letters?");
 if  (upSelect === true) 
@@ -34,13 +36,11 @@ var specSelect = confirm("Does the password require special characters?");
 if  (specSelect === true) 
 {finArr.push("!@#$%^&*()");}
 
-
+}
 
 var arrayLength = finArr.length;
 var passAmt = Math.floor(charNum / arrayLength);
 
-
- 
   function generatePassword() 
   
   
@@ -68,15 +68,7 @@ var zeroLength = finArr[0].length;
 
   }
 
-  
-
- 
-    
-    
-    
-     
-      
-      function writePassword(array) {
+  function writePassword(array) {
 
         //This  piece of code uses the Fisher-Yates algorithim to shuffle the selected characters before writing. 
         //There is a great article on it at: https://medium.com/@oldwestaction/randomness-is-hard-e085decbcbb2
