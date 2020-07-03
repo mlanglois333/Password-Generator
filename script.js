@@ -12,6 +12,7 @@ generateBtn.addEventListener("click", selectInput);
 function selectInput() {
   
 var charNum = Number(prompt("Select number of charcters (between 8 and 128)"));
+if (charNum < 8, charNum > 128) {alert("Must be between 8-128 characters")};
 
 
 var upSelect = confirm("Does the password require uppercase letters?");
@@ -73,51 +74,46 @@ var zeroLength = finArr[0].length;
     
     
     
-    function shuffle(array) {
      
-     
-      var currentIndex = array.length, temporaryValue, randomIndex;
-    
-     
-      while (0 !== currentIndex) {
-    
-        
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-    
-     
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+      
+      function writePassword(array) {
+
+        //This  piece of code uses the Fisher-Yates algorithim to shuffle the selected characters before writing. 
+        //There is a great article on it at: https://medium.com/@oldwestaction/randomness-is-hard-e085decbcbb2
+        //The concept is that you pick a random index and swap it with a string
+        //It is written so that each element can only be selected once, moving from the last element down
+
+
+        //This breaks the password string down into an array of single characters
+        var array = pWord.split("");
+        var currentIndex = array.length, temporaryValue, randomIndex;
+      
+        // This stops the shuffling when every element has been shuffled
+        while (0 !== currentIndex) {
+      
+          // This selects an element at a random index
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+      
+          // This swaps the elements out
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+
+          
+
+        }
+        //This takes the randomized array and joins it back into a usable password string
+        var password = array.join("");
+        var passwordText = document.querySelector("#password");
+         passwordText.value = password;
       }
-    
-      var array = arr.join('');
-      return pWord;
-    }
-    
- 
-  
-  
-
-
-
-function writePassword() {
-  var finalPword = pWord.join('');
-  var password = finalPword;
-  var passwordText = document.querySelector("#password");
-   passwordText.value = password;
-   console.log(pWord);
-}
-
-
-
+      
+      
+      
 generatePassword();
 addDiff();
-   var arr = pWord.split("");
-   shuffle(arr);
-   console.log(pWord);
-
-writePassword(finalPword);
+writePassword();
 
 
 
