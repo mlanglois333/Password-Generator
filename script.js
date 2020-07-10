@@ -1,7 +1,7 @@
 
 
-var generateBtn = document.querySelector("#generate");
-var clearBtn = document.querySelector("#clear");
+const generateBtn = document.querySelector("#generate");
+const clearBtn = document.querySelector("#clear");
 generateBtn.addEventListener("click", start);
 clearBtn.addEventListener("click", clearPwd);
 
@@ -9,33 +9,33 @@ clearBtn.addEventListener("click", clearPwd);
 
 function start() {
 
-  var finArr = [];
-  var pWord = "";
+  let finArr = [];
+  let pWord = "";
 
 
-var charNum = (prompt("Select number of charcters (between 8 and 128)"))
+const charNum = (prompt("Select number of charcters (between 8 and 128)"))
  if (charNum < 8) {alert("Must contain 8-128 characters"); }
  else if (charNum > 128) {alert("Must contain 8-128 characters");
 
 }
 else {
 
-var upSelect = confirm("Does the password require uppercase letters?");
+const upSelect = confirm("Does the password require uppercase letters?");
 if  (upSelect === true) 
 {finArr.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");}
 
 
-var lowSelect = confirm("Does the password require lowercase letters?");
+const lowSelect = confirm("Does the password require lowercase letters?");
 if  (lowSelect === true) 
 {finArr.push("abcdefghijklmnopqrstuvwxyz");}
 
 
-var numSelect = confirm("Does the password require numbers?");
+const numSelect = confirm("Does the password require numbers?");
 if  (numSelect === true) 
 {finArr.push("1234567890");}
 
 
-var specSelect = confirm("Does the password require special characters?");
+const specSelect = confirm("Does the password require special characters?");
 if  (specSelect === true) 
 {finArr.push("!@#$%^&*()");}
 
@@ -46,8 +46,8 @@ if  (specSelect === true)
 
 }
 
-var arrayLength = finArr.length;
-var passAmt = Math.floor(charNum / arrayLength);
+let arrayLength = finArr.length;
+const passAmt = Math.floor(charNum / arrayLength);
 
   function generatePassword() 
   
@@ -55,9 +55,9 @@ var passAmt = Math.floor(charNum / arrayLength);
   { for (i = 0; i < arrayLength; i++ ){
 
 
-var finArr1 = finArr[i];
+let finArr1 = finArr[i];
 
-var stringLength = finArr1.length;
+const stringLength = finArr1.length;
 
     for ( j = 0; j < passAmt; j++) {pWord += (finArr1)[Math.floor(Math.random() * stringLength)];}; 
   
@@ -66,9 +66,9 @@ var stringLength = finArr1.length;
 function addDiff() {  
 
 
-var pwdLength = pWord.length;
-var pwdDif = charNum - pwdLength;
-var zeroLength = finArr[0].length;
+const pwdLength = pWord.length;
+const pwdDif = charNum - pwdLength;
+const zeroLength = finArr[0].length;
 
 
   for ( i = 0; i < pwdDif; i++) {pWord += (finArr[0])[Math.floor(Math.random() * zeroLength)];}; 
@@ -104,8 +104,8 @@ var zeroLength = finArr[0].length;
 
         }
         //This takes the randomized array and joins it back into a usable password string
-        var password = array.join("");
-        var passwordText = document.querySelector("#password");
+        const password = array.join("");
+        const passwordText = document.querySelector("#password");
          passwordText.value = password;
       }
       
@@ -119,7 +119,7 @@ writePassword();
 }
 
 function clearPwd() {
-  var clearText = document.querySelector("#password");
+  const clearText = document.querySelector("#password");
   clearText.value = ""; 
 
 
