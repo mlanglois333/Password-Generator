@@ -1,15 +1,18 @@
 
 
 var generateBtn = document.querySelector("#generate");
-var finArr = [];
-var pWord = "";
-
-generateBtn.addEventListener("click", Start);
-
+var clearBtn = document.querySelector("#clear");
+generateBtn.addEventListener("click", start);
+clearBtn.addEventListener("click", clearPwd);
 
 
-function Start() {
-  
+
+function start() {
+
+  var finArr = [];
+  var pWord = "";
+
+
 var charNum = (prompt("Select number of charcters (between 8 and 128)"))
  if (charNum < 8) {alert("Must contain 8-128 characters"); }
  else if (charNum > 128) {alert("Must contain 8-128 characters");
@@ -35,6 +38,11 @@ if  (numSelect === true)
 var specSelect = confirm("Does the password require special characters?");
 if  (specSelect === true) 
 {finArr.push("!@#$%^&*()");}
+
+
+
+
+
 
 }
 
@@ -108,13 +116,14 @@ addDiff();
 writePassword();
 
 
+}
 
-
-
+function clearPwd() {
+  var clearText = document.querySelector("#password");
+  clearText.value = ""; 
 
 
 }
-
 
 
 
